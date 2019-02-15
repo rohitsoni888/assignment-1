@@ -1,0 +1,278 @@
+/**
+ * Copyright (c) 2017 AFFLE INDIA PVT. LTD.
+ *
+ * @package       FAAS
+ * @copyright     AFFLE INDIA PVT. LTD.
+ * @author        Chetana Srivasatava <chetana.srivastava@affle.com>
+ * @license       Proprietary
+ * @Description   Popover, Modal Window, Tabs, User Onboard Carousel
+ *
+ */
+@import "common.css?c=123";
+/*-------Modal Window------------*/
+.modal-backdrop.show{opacity: 0.5; z-index: 9999999992 !important;}
+.modal{ background-color: transparent;  top: 315px !important;  padding: 0; max-height: 100%; width: 100%; margin: 0px auto; box-shadow: none; z-index: 9999999992 !important;}
+.modal.show .modal-dialog{transform: translate(0,0);}
+/*---------------------------- Modal Window Close icon ------------------------------------*/
+.modal-content button.close{font-size: 33px; font-weight: 700; color: #000; opacity: 0.2; right: 14px; position: absolute; margin-top: 10px;}
+.modal-content button.close:hover, .modal-content button.close:focus, .modal-content button.close:active{opacity: 0.5; background: transparent;}
+.modal-content .modal-header{border-bottom: 0px;}
+/*------ Modal Footer Buttons ------------*/
+.modal-content .modal-footer{background: transparent; border:0px; padding: 4px 6px 25px; height: auto;}
+.modal-content .modal-footer .delcncl{margin: 0px auto;}
+.modal-content .modal-footer .delcncl a.btn{background: #5d8fc2; border-radius: 4px; padding: 0px; width: 110px; margin-right: 10px; color: #FFF; float: none; box-shadow: none; font-size: 12px;}
+.edit-modal .modal-content .modal-footer .delcncl button.btn, .tholdalert-modal .modal-content .modal-footer .delcncl button.btn, .save_cancel a.btn, .save_cancel button.btn {background: #5d8fc2; border-radius: 4px; padding: 0px; width: 125px; margin-right: 10px; color: #FFF; float: right; box-shadow: none; font-size: 12px;}
+.save_cancel button.btn.del{width: 160px;}
+.modal-content .modal-footer .delcncl a.btn.del, .modal-content .modal-footer .delcncl button.btn.del, .save_cancel a.btn.del, .save_cancel button.btn.del{background: #5d8fc2;}
+.modal-content .modal-footer .delcncl a.btn.del[disabled], .modal-content .modal-footer .delcncl button.btn.del[disabled], button.btn.del[disabled], .save_cancel button.btn.del[disabled]{cursor: not-allowed; pointer-events: none; background: rgba(93,143,194,0.6) !important;; color: #fff !important;}
+.modal-content .modal-footer .delcncl a.btn.del:hover, .modal-content .modal-footer .delcncl button.btn.del:hover, .save_cancel a.btn.del:hover, .save_cancel button.btn.del:hover{background: #4175ab;}
+.modal-content .modal-footer .delcncl a.btn.del:active, .modal-content .modal-footer .delcncl button.btn.del:active, .save_cancel a.btn.del:active, .save_cancel button.btn.del:active{background: #4175ab; top:1px;}
+.modal-content .modal-footer .delcncl a.btn.cncl, .save_cancel a.btn.cncl{background: #555555; }
+.modal-content .modal-footer .delcncl a.btn.cncl:hover, .save_cancel a.btn.cncl:hover{background: #303030;}
+.modal-content .modal-footer .delcncl a.btn.cncl:active, .save_cancel a.btn.cncl:active{background: #303030; top:1px; }
+.modal-content .modal-footer .delcncl.createcncl{margin: inherit;}
+.modal-content .modal-footer .delcncl.createcncl a.btn{float: right;}
+.modal-content .modal-footer button.btn.def{border: 1px solid #277ebd; color: #277ebd; background: transparent; box-shadow: none; float:left; border-radius: 4px; font-size: 12px; padding: 0 0; width: 125px; }
+.modal-content .modal-footer button.btn.def:hover, .modal-content .modal-footer button.btn.def:active, .modal-content .modal-footer button.btn.def:focus{background: #277ebd; color: #fff;}
+.modal-content .modal-footer button.btn.def[disabled], .modal-content .modal-footer button.btn.def[disabled]:hover, .btn[disabled]{border: 0 !important;}
+.modal-content .modal-footer button.btn.def:active{border: 1px solid #277ebd; color: #277ebd; background: transparent; top: 1px;}
+/*-------Delete Modal Window------------*/
+.del-modal{top:50%; margin-top: -170px; }
+.del-modal .modal-content{padding: 0px;}
+.del-modal .modal-content .modal-header{padding: 10px 0 22px 0;}
+.del-modal .modal-content .modal-body{padding: 0px; text-align: center;}
+.del-modal .modal-content .modal-body img{height: 95px;}
+.del-modal .modal-content .modal-body .error-heading {font-family: open sans; font-size: 21px; color: #555555; font-weight: 600; margin-top: 7px; margin-bottom: 3px;}
+.del-modal .modal-content .modal-body p.content{font-size: 13px; color: #585858; padding-left: 20px; padding-right: 20px; text-align: center;}
+.del-modal .modal-content .modal-body p.name{color:#4175ab; font-size: 15px; text-align: center;}
+/*---------------------------- Create/Add Modal Window ----------------------*/
+.modal.create-modal .modal-content{padding: 0px; width: 540px; margin-top: 80px;}
+.create-modal .modal-content button.close{margin-top: -10px;}
+.create-modal .modal-content .modal-header{padding: 24px 0 22px 0;}
+.create-modal .modal-body{ background: #eee;}
+.modal.create-modal .modal-content .modal-footer{padding: 10px 6px 10px;}
+.modal.create-modal .modal-content .modal-footer .delcncl.createcncl{width:100%;}
+.modal.create-modal .modal-content .modal-footer .delcncl.createcncl p.val_msg{font-size: 11px; max-width: 230px; float: left; text-align: left; padding-left: 10px; color: #d16e6c; line-height: 14px; margin-top: 10px;}
+/*-------Success and Error Modal Window------------*/
+.success-modal, .error-modal{top:50%; margin-top: -170px; }
+.success-modal .modal-dialog, .error-modal .modal-dialog{max-width: 450px;}
+.success-modal .modal-content, .error-modal .modal-content {padding: 0px;}
+.success-modal .modal-content .modal-header, .error-modal .modal-content .modal-header{padding: 10px 0 22px 0;}
+.success-modal .modal-content button.close, .error-modal .modal-content button.close{font-size: 33px; font-weight: 700; color: #000; opacity: 0.2; right: 14px; position: absolute; margin-top: 10px;}
+.success-modal .modal-content button.close:hover, .success-modal .modal-content button.close:focus, .error-modal .modal-content button.close:hover, .error-modal .modal-content button.close:focus{opacity: 0.5; background: transparent;}
+.success-modal .modal-content .modal-body, .error-modal .modal-content .modal-body{padding: 0px; text-align: center;}
+.success-modal .modal-content .modal-body img, .error-modal .modal-content .modal-body img{height: 95px;}
+.success-modal .modal-content .modal-body .msg-heading, .error-modal .modal-content .modal-body .msg-heading {font-family: open sans; font-size: 13px; color: #555555; font-weight: 300; margin-top: 7px; margin-bottom: 25px;}
+.success-modal .modal-content .modal-footer .delcncl a.btn, .error-modal .modal-content .modal-footer .delcncl a.btn{margin-right: 0px;}
+.success-modal .modal-content .modal-body p.content{font-size: 13px; color: #585858; padding-left: 20px; padding-right: 20px; text-align: center;}
+.success-modal .modal-content .successlimit .modal-body .msg-heading{margin-bottom: 5px; }
+/*---------------------------- Create Blacklist Modal Window ----------------------*/
+.modal.blcreate-modal .modal-content{padding: 0px; width: 650px; margin-top: 80px; left: 50%; margin-left: -325px;}
+.blcreate-modal .modal-content button.close{margin-top: -10px;}
+.blcreate-modal .modal-content .modal-header{padding: 24px 0 22px 0;}
+.blcreate-modal .modal-body{ background: #eee;}
+.modal.blcreate-modal .modal-content .modal-footer{padding: 10px 6px 10px;}
+.modal.blcreate-modal .modal-content .modal-footer .delcncl.createcncl{width:100%;}
+.modal.blcreate-modal .modal-content .modal-footer .delcncl.createcncl p.val_msg{font-size: 11px; max-width: 230px; float: left; text-align: left; padding-left: 10px; color: #d16e6c; line-height: 14px; margin-top: 10px;}
+/*------- Confirmation Modal Window------------*/
+.confirmation-modal{padding-top: 170px; background: rgba(0,0,0,0.3);}
+.modal.show.confirmation-modal .modal-dialog{max-width: 450px;}
+.confirmation-modal .modal-content{padding: 0px;}
+.confirmation-modal .modal-content .modal-header{padding: 10px 0 22px 0;}
+.confirmation-modal .modal-content button.close{font-size: 33px; font-weight: 700; color: #000; opacity: 0.2; right: 14px; position: absolute; margin-top: 10px;}
+.confirmation-modal .modal-content button.close:hover, .confirmation-modal .modal-content button.close:focus{opacity: 0.5; background: transparent;}
+.confirmation-modal .modal-content .modal-body{padding: 0px; text-align: center;}
+.confirmation-modal .modal-content .modal-body img{height: 95px;}
+.confirmation-modal .modal-content .modal-body .error-heading {font-family: open sans; font-size: 18px; color: #555555; font-weight: 600; margin-top: 7px; margin-bottom: 3px;}
+.confirmation-modal .modal-content .modal-body p.content{font-size: 13px; color: #585858; padding-left: 20px; padding-right: 20px; text-align: center; margin-bottom: 0 !important;}
+.confirmation-modal .modal-content .modal-body p.name{color:#4175ab; font-size: 14px; text-align: center; word-break: break-all; padding: 0 10px;}
+/*------------Edit Profile Modal Window-------------*/
+.edit-modal{top:50%; margin-top: -280px; }
+.modal.edit-modal .modal-content{padding: 0px; width: 540px; margin-top: 80px;}
+.edit-modal .modal-content button.close{margin-top: -10px;}
+.edit-modal .modal-content .modal-header{padding: 24px 0 22px 0;}
+.edit-modal .modal-body{ background: #eee;}
+.modal.edit-modal .modal-content .modal-footer{padding: 10px 6px 10px;}
+.modal.edit-modal .modal-content .modal-footer .delcncl.createcncl{width:100%;}
+.modal.edit-modal .modal-content .modal-footer .delcncl.createcncl p.val_msg{font-size: 11px; max-width: 230px; float: left; text-align: left; padding-left: 10px; color: #d16e6c; line-height: 14px; margin-top: 10px;}
+.edituser .modal-header .heading {text-align: center; font-size: 18px; font-weight: bold; color: #555; width:100%;}
+.edituser .modal-body .form-group {width: 100%; float: left; margin-bottom: 0px;}
+.edituser .modal-body .form-group label {text-align: right; font-size: 12px; line-height: 32px; font-weight: normal; color: #393939; margin-bottom: 0px;}
+.edituser .form-group label.col-sm-4{padding-right: 25px;}
+.edituser .form-group .col-sm-8{padding-left: 0px;}
+.edituser .modal-body .form-group input[type='email']{color: #848484 !important; background-color: #EEE !important;border: 1px solid #ddd; font-size: 12px; height: 30px; border-radius: 3px !important; line-height: 31px; padding-left: 10px; padding-right: 5px; margin-bottom: 0px; width:95%;}
+.edituser .modal-body .form-group input[type='email']:hover,.edituser .modal-body .form-group input[type='email']:focus, .edituser .modal-body .form-group input[type='email']:active{border: 1px solid #ddd !important; box-shadow: none;}
+.edituser .modal-body .form-group input[type='text'], .edituser .modal-body .form-group input[type='password']{border: 1px solid #ddd; font-size: 12px; height: 30px; border-radius: 3px !important; line-height: 31px; background: #fff; padding-left: 10px; padding-right: 5px; margin-bottom: 0px;  width:95%;}
+.edituser .modal-body .form-group input[type='text']:hover, .edituser .modal-body .form-group input[type='password']:hover{border-color: #b5b5b5 !important;}
+.edituser .modal-body .form-group input[type='text']:focus, .edituser .modal-body .form-group input[type='text']:active, .edituser .modal-body .form-group input[type='password']:focus, .edituser .modal-body .form-group input[type='password']:active{border-color: #F59942 !important; box-shadow: none;}
+/*---------------------------- User Onboarding Modal Window ----------------------*/
+.useronboard-modal{top:50%; margin-top: -310px; }
+.modal.useronboard-modal .modal-content{padding: 0px; width: 602px; margin-top: 80px; left: 50%; margin-left: -301px;}
+.useronboard-modal .modal-content button.close{margin-top: 20px; z-index: 99; color: #000;opacity: 0.3;}
+.useronboard-modal .modal-content button.close:hover, .useronboard-modal .modal-content button.close:focus, .useronboard-modal .modal-content button.close:active{color: #000; opacity: 0.6;}
+.useronboard-modal .modal-content .modal-header{padding: 0;}
+.useronboard-modal .modal-body{ background: #eee;}
+.modal.useronboard-modal .modal-content .modal-footer{padding: 10px 6px 10px;}
+.modal.useronboard-modal .modal-content .modal-footer .delcncl.createcncl{width:100%;}
+.modal.useronboard-modal .modal-content .modal-footer .delcncl.createcncl p.val_msg{font-size: 11px; max-width: 230px; float: left; text-align: left; padding-left: 10px; color: #d16e6c; line-height: 14px; margin-top: 10px;}
+/*------------Threshold & Alerts Modal Window-------------*/
+.modal.tholdalert-modal .modal-content{padding: 0px; width: 540px; margin-top: 80px;}
+.tholdalert-modal .modal-content button.close{margin-top: -10px;}
+.tholdalert-modal .modal-content .modal-header{padding: 24px 0 22px 0;}
+.tholdalert-modal .modal-body.col-xs-12{ background: #eee;}
+.tholdalert-modal .modal-body.col-xs-12 .col-md-12{background: #fff;}
+.modal.tholdalert-modal .modal-content .modal-footer{padding: 10px 6px 10px;}
+.modal.tholdalert-modal .modal-content .modal-footer .delcncl.createcncl{width:100%;}
+.modal.tholdalert-modal .modal-content .modal-footer .delcncl.createcncl p.val_msg{font-size: 11px; max-width: 230px; float: left; text-align: left; padding-left: 10px; color: #d16e6c; line-height: 14px; margin-top: 10px;}
+.holdnalerts .modal-header .heading {text-align: center; font-size: 18px; font-weight: bold; color: #555; width:100%;}
+.holdnalerts .modal-body .form-group {width: 100%; float: left; margin-bottom: 0px;}
+.holdnalerts .modal-body .form-group label {text-align: right; font-size: 12px; line-height: 32px; font-weight: normal; color: #393939; margin-bottom: 0px;}
+.holdnalerts .form-group label.col-sm-4{padding-right: 25px;}
+.holdnalerts .form-group .col-sm-8{padding-left: 0px;}
+.holdnalerts .modal-body .form-group input[type='text']:disabled, .holdnalerts .modal-body input:read-only {color: #848484 !important; background-color: #EEE !important; border: 1px solid #ddd !important; font-size: 12px; height: 30px; border-radius: 3px !important; line-height: 31px; padding-left: 10px; padding-right: 5px; margin-bottom: 0px; width:95%; }
+.holdnalerts .modal-body input:read-only{cursor: default;}
+.holdnalerts .modal-body .form-group input[type='text']:disabled:hover, .holdnalerts .modal-body .form-group input[type='text']:disabled:focus, .holdnalerts .modal-body .form-group input[type='text']:disabled:active{border: 1px solid #ddd !important; box-shadow: none;}
+.holdnalerts .modal-body .form-group input[type='text'], .holdnalerts .modal-body .form-group input[type='password'], .holdnalerts .modal-body input:read-only:hover, .holdnalerts .modal-body input:read-only:active, .holdnalerts .modal-body input:read-only:focus, .holdnalerts .modal-body .form-group .store .popover input[type='date']{border: 1px solid #ddd; font-size: 12px; height: 30px; border-radius: 3px !important; line-height: 31px; background: #fff; padding-left: 10px; padding-right: 5px; margin-bottom: 0px;  width:95%;}
+.holdnalerts .modal-body .form-group input[type='text']:hover, .holdnalerts .modal-body .form-group input[type='password']:hover, .holdnalerts .modal-body .form-group .store .popover input[type='date']:hover{border-color: #b5b5b5 !important;}
+.holdnalerts .modal-body .form-group input[type='text']:focus, .holdnalerts .modal-body .form-group input[type='text']:active, .holdnalerts .modal-body .form-group input[type='password']:focus, .holdnalerts .modal-body .form-group input[type='password']:active, .holdnalerts .modal-body .form-group .store .popover input[type='date']:focus, .holdnalerts .modal-body .form-group .store .popover input[type='date']:active{border-color: #F59942 !important; box-shadow: none;}
+#configlimit ul.nav-tabs{background: #fff !important;}
+#configlimit .nav-tabs .nav-item.show .nav-link, #configlimit .nav-tabs .nav-link.active{background: #eee; border-bottom: 1px solid transparent;}
+.holdnalerts .modal-body  input[type='checkbox']{float:left; left: auto !important; margin-left: 0 !important; margin-top: 9px !important;}
+/*--------- User Onboard Carousel -----------*/
+.carousel{height: auto !important;}
+.carousel-item > p > i.fa { font-size: 50px;}
+.carousel-item .carousel-caption p {text-align: center; font-size: 12px; padding: 0 50px;}
+.carousel-item .carousel-caption h3 {text-align: center; margin-top: 5px; margin-bottom: 5px; font-size: 22px; font-weight: normal; font-family: 'Open Sans', sans-serif;
+}
+.carousel-item:nth-of-type(1) .carousel-caption h3, .carousel-item:nth-of-type(1) .carousel-caption p{color: #000;}
+carousel-item:nth-of-type(1) .carousel-caption h3{font-size: 28px; font-weight: 300;}
+.carousel-item:nth-of-type(1) .carousel-caption h3 b{font-weight: 700;}
+.carousel-item{padding-bottom: 50px; padding-top: 35px; height: 360px; border-radius: 4px !important;}
+.carousel-item:nth-of-type(1){background: #fff; color: #000; width: 600px; background-repeat: no-repeat; background-size: 110%;background-position: 0px -135px; z-index: 15;}
+.carousel-item:nth-of-type(2){background: #277ebd; color: #fff;}
+.carousel-item:nth-of-type(3){background: #a05888; color: #fff;}
+.carousel-item:nth-of-type(4){background: #f7a551; color: #fff;}
+.carousel-item:nth-of-type(5){background: #28bc64; color: #fff;}
+.carousel-item:nth-of-type(2) img, .carousel-item:nth-of-type(3) img, .carousel-item:nth-of-type(4) img, .carousel-item:nth-of-type(5) img{width: 160px !important; height: 160px !important; margin: 0px auto; position: absolute; left: 50%; margin-left: -80px;}
+.carousel-caption {position: absolute; right: 0%; bottom: 65px; left: 0%; z-index: 10; padding-top: 5px; padding-bottom: 20px;  text-align: center; width: 100%;}
+.carousel-item:nth-of-type(1) .carousel-caption{ bottom: 80px;}
+button.take_tour { bottom: -15px; background-color: #5d8fc2 !important; border: 0 !important; color: #fff !important; padding: 9px; font-size: 11px; font-weight: normal; position: absolute; right: 0px; z-index: 1; text-shadow: 0 0 0; left: 50%; border-radius: 3px; opacity: 1 !important; width: 240px; line-height: 14px; margin-left: -120px;}
+button.take_tour:active {bottom: -16px; background-color: #4175ab !important;}
+button.take_tour:hover { background-color: #4175ab !important;}
+a.start_first {margin-top: 30px; background-color: transparent; border: 1px solid rgba(255,255,255, .5) !important; color: #fff !important; padding: 0; font-size: 11px; font-weight: normal; position: absolute; right: 0px; z-index: 1;  text-shadow: 0 0 0; left: 50%; border-radius: 3px; opacity: 1 !important; width: 240px; line-height: 28px; margin-left: -120px; height: 32px; text-align: center;}
+a.start_first:hover {text-decoration: none; border: 1px solid rgba(255,255,255, 1) !important;}
+a.start_first:active { margin-top: 31px; }
+.carousel-item:nth-of-type(1) .carousel-caption a.start_first{border: 1px solid #5d8fc2 !important; color: #5d8fc2 !important; margin-top: 45px; z-index: 99;}
+.carousel-item:nth-of-type(1) .carousel-caption a.start_first:hover{border: 1px solid #4175ab !important; color: #4175ab !important;}
+.carousel-item:nth-of-type(1) .carousel-caption a.start_first:active{margin-top: 46px;}
+.carousel-indicators{bottom: 58px;}
+.carousel-indicators .active{opacity: 1; background: #fff;}
+.carousel-indicators li{position: relative; -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; width: 15px; height: 3px; margin-right: 3px; margin-left: 3px; text-indent: -999px; cursor: pointer; border: 1px solid #fff; background: #fff; border-radius: 50%; height: 15px; margin-top: 10px; max-width: 15px; opacity: .6;}
+/*arrows*/
+.carousel-control-next, .carousel-control-prev{position: absolute; top: 32%; font-size: 20px; vertical-align: middle; background: transparent; color: #869791; opacity: 1; width: 34px; height: 130px;}
+.carousel-control-next:hover, .carousel-control-prev:hover, .carousel-control-next:focus, .carousel-control-prev:focus, .carousel-control-next:active, .carousel-control-prev:active{background: rgba(0,0,0,0.1); transition: background .15s linear; color: #fff;}
+.carousel-control-next{ border-top-left-radius: 10px; border-bottom-left-radius: 10px;  z-index: 100;}
+.carousel-control-prev{border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
+.carousel-control-next-icon{margin-left: 7px;}
+#slide5 .carousel-control-prev{z-index: 0; display: none}
+.carousel-control-next-icon, .carousel-control-prev-icon{display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; background: none; color: #ddd;}
+.carousel-control-next-icon:before{content: "\f054";}
+.carousel-control-prev-icon:before{content: "\f053";}
+/*--------- Logo Animation -----------*/
+@keyframes bounce{
+    0% { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0);}
+    50% {-moz-transform: translateY(-3px); -ms-transform: translateY(-3px); -webkit-transform: translateY(-3px); transform: translateY(-3px);}
+    100% {-moz-transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);  transform: translateY(0px);}
+}
+.carousel-item:nth-of-type(1) .logo { position: relative; bottom: 0; left: 50%; margin-left: -55px; width: 110px; height: 137px; padding: 0; -moz-animation: bounce 2s infinite; -webkit-animation: bounce 2s infinite; animation: bounce 2s infinite;}
+.carousel-item:nth-of-type(1) .logo img{min-width: 110px; width: 110px;}
+.shad {width: 110px; height: 15px; border-radius: 50%; color: rgba(0,0,0,1); position: relative; left: 50%; margin-left: -110px; top: 137px; background: #b5b5b5; background: -moz-radial-gradient(center, ellipse cover,  #c5c5c5 0%, #ffffff 66%); background: -webkit-radial-gradient(center, ellipse cover,  #c5c5c5 0%,#ffffff 66%); background: radial-gradient(ellipse at center,  #c5c5c5 0%,#ffffff 66%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5b5b5', endColorstr='#ffffff',GradientType=1 ); -moz-animation: bounce 2s infinite; -webkit-animation: bounce 2s infinite; animation: bounce_shadow 2s infinite;}
+/*-------Logo Shadow Animation --------*/
+@-moz-keyframes bounce_shadow {
+    0% { -moz-transform: scaleX(1.1); transform: scaleX(1.1);}
+    50% { -moz-transform: scaleX(1); transform: scaleX(1);}
+    100% { -moz-transform: scaleX(1.1); transform: scaleX(1.1);}
+}
+@-webkit-keyframes bounce_shadow {
+    0% {-webkit-transform: scaleX(1.1); transform: scaleX(1.1);}
+    50% {-webkit-transform: scaleX(1); transform: scaleX(1);}
+    100% {-webkit-transform: scaleX(1.1); transform: scaleX(1.1);}
+}
+@keyframes bounce_shadow {
+    0% {-moz-transform: scaleX(1.1); -ms-transform: scaleX(1.1); -webkit-transform: scaleX(1.1); transform: scaleX(1.1);}
+    50% {-moz-transform: scaleX(1); -ms-transform: scaleX(1); -webkit-transform: scaleX(1); transform: scaleX(1);}
+    100% {-moz-transform: scaleX(1.1); -ms-transform: scaleX(1.1); -webkit-transform: scaleX(1.1); transform: scaleX(1.1);}
+}
+/*------------- Start Tabs -------------------*/
+.nav-tabs .nav-item{margin-left: 10px; margin-bottom: -2px; width: 220px;}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{box-shadow: 0 2px 0px 0 #4c8fbd inset; border-top-left-radius: 3px !important;  border-top-right-radius: 3px !important; background: #fff;}
+.nav-tabs .nav-link{color: #555; padding: 0 0; border-top-left-radius: 3px !important;  border-top-right-radius: 3px !important;}
+.nav-tabs .nav-link:hover{border:1px solid #e0e0e0; border-bottom: 0px; background-color: rgba(156, 154, 154, 0.1);}
+.nav-tabs .nav-link.active:hover{background: #fff; border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0; border-left:1px solid #e0e0e0;}
+.nav-tabs .nav-link div{text-align: center; line-height: 39px;}
+/*Threshold Tabs*/
+.holdnalerts .nav-tabs .nav-item{width: 47.3%;}
+/*------------- Ends Tabs ---------------------*/
+/*------------ Popover--------*/
+.popover { position: absolute;top: 0; left: 0; z-index: 1060; display: none; max-width: 276px; padding: 1px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px;  font-style: normal; font-weight: 400; line-height: 1.42857143; text-align: left; text-align: start; text-decoration: none; text-shadow: none; text-transform: none; letter-spacing: normal; word-break: normal; word-spacing: normal; word-wrap: normal; white-space: normal; background-color: #fff; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0,0,0,.2); border-radius: 6px;-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2); box-shadow: 0 5px 10px rgba(0,0,0,.2); line-break: auto;}
+.popover.bottom { margin-top: 10px;}
+.popover>.arrow:after { position: absolute; display: block; width: 0; height: 0; border-color: transparent; border-style: solid;}
+.popover>.arrow:after { content: ""; border-width: 10px;}
+.popover.bottom>.arrow:after {top: 1px; margin-left: -10px; content: " "; border-top-width: 0; border-bottom-color: #fff;}
+.popover>.arrow {border-width: 11px;}
+.popover.bottom>.arrow {top: -11px; left: 50%; margin-left: -11px; border-top-width: 0; border-bottom-color: #999; border-bottom-color: rgba(0,0,0,.25);}
+/*Campaign Download Popover Left Bottom*/
+.dcsv .popover{margin-left: 30px; margin-top: 6px;}
+.dcsv .popover.left.in>.arrow {left: 50%; margin-left: -5px; top: calc((.5rem + 1px) * -1);}
+.dcsv .popover .arrow { width: 1rem; height: .5rem; margin: 0 .3rem;}
+.dcsv .popover.left.in .arrow:before, .dcsv .popover.left.in .arrow:after{border-width: 0 .5rem .5rem;  position: absolute; display: block; content: ""; border-color: transparent; border-style: solid; margin-top: -8px; left: 92%;}
+.dcsv .popover.left.in .arrow:before{top: 0; border-bottom-color: rgba(0,0,0,.25);}
+.dcsv .popover.left.in .arrow:after{top: 1px; border-bottom-color: #fff;}
+
+/*Left Bottom*/
+.popover.left.in div.popover-content ul li p{font-size: 10.5px; margin-bottom: 0 !important; line-height: 16px; color: #555;}
+.modal.fade.show.tholdalert-modal .popover.top.in{margin-top: -5px; margin-left: -36px; min-width: 220px;}
+/*Threshold Version Top Popover*/
+.popover.top.in .arrow{
+    margin-left: 70%; bottom: calc((.5rem + 13px) * -1);
+}
+.popover.top.in .arrow:before, .popover.top.in .arrow:after{border-width: .5rem .5rem 0; position: absolute; display: block;
+                                                            content: "";
+                                                            border-color: transparent;
+                                                            border-style: solid;}
+.popover.top.in .arrow:before{    bottom: -8px;
+                                  border-top-color: rgba(0,0,0,.25);}
+.popover.top.in .arrow:after{bottom: -7px; border-top-color: #fff;}
+/*------------ Timepicker --------*/
+.popover fieldset{border:0; margin: 0; padding: 0;}
+.popover fieldset .ngb-tp .btn-link{color: #555 !important;}
+.popover fieldset .ngb-tp .btn-link:hover, .popover fieldset .ngb-tp .btn-link:focus, .popover fieldset .ngb-tp .btn-link:active{color: #333 !important;}
+.popover fieldset .ngb-tp input[type='text'], .popover fieldset .ngb-tp .ngb-tp-meridian button.btn.btn-outline-primary{border: 1px solid #ddd; font-size: 12px; height: 32px; border-radius: 3px !important; line-height: 31px; background: #fff; padding: 0 3px; margin-bottom: 0px; float: left; color: #393939 !important; box-shadow: none;}
+.popover fieldset .ngb-tp .ngb-tp-meridian button.btn.btn-outline-primary:hover{border: 1px solid #b5b5b5 !important; outline: 0px; color: #555;}
+.popover fieldset .ngb-tp .ngb-tp-meridian button.btn.btn-outline-primary:active, .popover fieldset .ngb-tp .ngb-tp-meridian button.btn.btn-outline-primary:focus{border: 1px solid #F59942 !important; outline: 0 !important;}
+.popover fieldset .ngb-tp .ngb-tp-meridian button.btn.btn-outline-primary{padding: 0 7.3px;}
+
+.store input[type='button']{cursor: pointer; padding: 0px 45px; background: #5d8fc2 !important; color: #fff !important;  float: right; width: 100%; height: 32px; line-height: 32px; font-size: 12px; border: 0px; width: auto; border-radius: 4px; box-shadow: none; outline: 0;}
+.store input[type='button'][disabled]{cursor: not-allowed; padding: 0px 45px;  pointer-events: none; background: rgba(93,143,194,0.6) !important; color: #fff !important;  float: right; width: 100%; height: 32px; line-height: 32px; font-size: 12px; border: 0px; width: auto; border-radius: 4px;}
+.store input[type='button']:hover, .store input[type='button']:focus, .store input[type='button']:active{background: #277ebd; color: #fff;}
+.store a.configure{background: #5dc4bf  !important; color: #fff !important;  float: left; width: 100%; line-height: 30px; font-size: 12px; border: 0px; width: auto; border-radius: 4px; box-shadow: none; outline: 0; padding: 0px 10px; height: auto !important; margin-top: -1px;}
+.store a.btn.configure:hover, .store a.configure:focus, .store a.configure:active{background-color: #40aea9 !important;  border-color: #369490}
+.store a.btn.configure i.fa-cogs{margin-right: 5px;}
+/*Threshold Configure  Store Popover Left Bottom*/
+.store .popover{max-width: 350px; width: 350px; margin-left: 105px; margin-top: 6px;}
+.store .popover-content{padding: 9px 15px 9px 0;}
+.store .popover.left.in>.arrow {left: 50%; margin-left: -5px; top: calc((.5rem + 1px) * -1);}
+.store .popover .arrow { width: 1rem; height: .5rem; margin: 0 .3rem;}
+.store .popover.left.in .arrow:before, .store .popover.left.in .arrow:after{border-width: 0 .5rem .5rem;  position: absolute; display: block; content: ""; border-color: transparent; border-style: solid; margin-top: -9px; left: 80%;}
+.store .popover.left.in .arrow:before{top: 0; border-bottom-color: rgba(0,0,0,.25);}
+.store .popover.left.in .arrow:after{top: 1px; border-bottom-color: #fff;}
+.holdnalerts .modal-body .form-group .store .popover input[type='text'], .holdnalerts .modal-body .form-group .store .popover input[type='date']{width: 93%;}
+
+.dcsv .popover{margin-left: 30px; margin-top: 6px;}
+.dcsv .popover.left.in>.arrow {left: 50%; margin-left: -5px; top: calc((.5rem + 1px) * -1);}
+.dcsv .popover .arrow { width: 1rem; height: .5rem; margin: 0 .3rem;}
+.dcsv .popover.left.in .arrow:before, .dcsv .popover.left.in .arrow:after{border-width: 0 .5rem .5rem;  position: absolute; display: block; content: ""; border-color: transparent; border-style: solid; margin-top: -8px; left: 92%;}
+.dcsv .popover.left.in .arrow:before{top: 0; border-bottom-color: rgba(0,0,0,.25);}
+.dcsv .popover.left.in .arrow:after{top: 1px; border-bottom-color: #fff;}
+
+.modal-header .close{ margin-left: 422px;}
